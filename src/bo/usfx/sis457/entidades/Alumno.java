@@ -16,21 +16,25 @@ import java.util.GregorianCalendar;
 public class Alumno extends Persona {
     protected String CarnetUniversitario;
     protected int Semestre;
-    
-    public Alumno(String carnetUniversitario, int semestre, String carnetIdentidad, String nombre, Calendar fechaNacimiento) {
+    private String[] Materias = new String[15];
+
+    public Alumno(String CarnetUniversitario, int Semestre, String[] Materias, String carnetIdentidad, String nombre, Calendar fechaNacimiento) {
         super(carnetIdentidad, nombre, fechaNacimiento);
+        this.CarnetUniversitario = CarnetUniversitario;
+        this.Semestre = Semestre;
+        this.Materias = Materias;
+        //System.out.println("Se crea un Alumno");
+    }
+
+    
+    public Alumno(String carnetUniversitario, int semestre, String[] materias) {
         this.CarnetUniversitario = carnetUniversitario;
         this.Semestre = semestre;
+        this.Materias = materias;
         //System.out.println("Se crea un Alumno");
     }
     
-    public Alumno(String carnetUniversitario, int semestre) {
-        super();
-        this.CarnetUniversitario = carnetUniversitario;
-        this.Semestre = semestre;
-        //System.out.println("Se crea un Alumno");
-    }
-    
+        
     public String getCarnetUniversitario() {
         return CarnetUniversitario;
     }
@@ -46,6 +50,19 @@ public class Alumno extends Persona {
     public void setSemestre(int semestre) {
         this.Semestre = semestre;
     }
+    /**
+     * @return the Materias
+     */
+    public String[] getMaterias() {
+        return Materias;
+    }
+
+    /**
+     * @param materias the Materias to set
+     */
+    public void setMaterias(String[] materias) {
+        this.Materias = materias;
+    }
 
     @Override
     public String toString() {
@@ -57,4 +74,6 @@ public class Alumno extends Persona {
                 + ", CarnetUniversitario=" + this.CarnetUniversitario 
                 + ", Semestre=" + this.Semestre + '}';
     }
+
+    
 }
